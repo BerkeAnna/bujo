@@ -1,0 +1,21 @@
+<section class="content">
+  <app-menu></app-menu>
+  <div class="main_component">
+    <app-home *ngIf="page === 'home'"></app-home>
+  </div>
+  <div class="main_component">
+    <app-calendar *ngIf="page === 'calendar'"></app-calendar>
+  </div>
+  <div class="main_component">
+    <app-event *ngIf="page === 'event'"></app-event>
+  </div>
+  <div class="main_component">
+    <app-habit-tracker *ngIf="page === 'habit-tracker'"></app-habit-tracker>
+  </div>
+  <div class="main_component">
+    <app-note *ngIf="page === 'note'"></app-note>
+  </div>
+  <div class="main_component">
+    <app-todo-list *ngIf="page === 'todo-list'"></app-todo-list>
+  </div>
+</section>
