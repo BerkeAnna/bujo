@@ -1,21 +1,32 @@
 <section class="content">
-  <app-menu></app-menu>
-  <div class="main_component">
-    <app-home *ngIf="page === 'home'"></app-home>
-  </div>
-  <div class="main_component">
-    <app-calendar *ngIf="page === 'calendar'"></app-calendar>
-  </div>
-  <div class="main_component">
-    <app-event *ngIf="page === 'event'"></app-event>
-  </div>
-  <div class="main_component">
-    <app-habit-tracker *ngIf="page === 'habit-tracker'"></app-habit-tracker>
-  </div>
-  <div class="main_component">
-    <app-note *ngIf="page === 'note'"></app-note>
-  </div>
-  <div class="main_component">
-    <app-todo-list *ngIf="page === 'todo-list'"></app-todo-list>
-  </div>
+  <app-menu (selectedPage)="changePage($event)"></app-menu>
+  <ng-container [ngSwitch]="page"> 
+    <ng-container *ngSwitchCase="'home'">
+    <div class="main_component">
+      <app-home></app-home>
+    </div>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="'calendar'">
+    <app-calendar ></app-calendar>
+  </ng-container>
+
+    <ng-container *ngSwitchCase="'event'">
+    <app-event ></app-event>
+  </ng-container>
+
+    <ng-container *ngSwitchCase="'habit-tracker'">
+    <app-habit-tracker ></app-habit-tracker>
+  </ng-container>
+
+    <ng-container *ngSwitchCase="'note'">
+    <app-note></app-note>
+  </ng-container>
+
+    <ng-container *ngSwitchCase="'todo-list'">
+    <app-todo-list ></app-todo-list>
+  </ng-container>
+</ng-container>
+
+
 </section>

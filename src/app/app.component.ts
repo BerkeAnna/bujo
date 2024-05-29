@@ -8,4 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'bullet-journal';
   page='home';
+  
+
+  changePage(selectedPage: string){
+    this.page = selectedPage;
+  }
 }
