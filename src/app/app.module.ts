@@ -10,13 +10,11 @@ import { EventComponent } from './pages/event/event.component';
 import { HabitTrackerComponent } from './pages/habit-tracker/habit-tracker.component';
 import { NoteComponent } from './pages/note/note.component';
 import { MenuComponent } from './shared/menu/menu.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    TodoListComponent,
-    CalendarComponent,
     EventComponent,
     HabitTrackerComponent,
     NoteComponent,
@@ -24,9 +22,14 @@ import { MenuComponent } from './shared/menu/menu.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CalendarComponent,
+    HomeComponent,
+    TodoListComponent,
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

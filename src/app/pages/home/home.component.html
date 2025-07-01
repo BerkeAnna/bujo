@@ -1,3 +1,26 @@
-<div>
-   <h1>Welcome to my homepage!!!</h1>
+<div class="card-wrapper">
+   <mat-card class="home-card" appearance="outlined">
+      <mat-card class="home-inside-card" appearance="outlined">
+      <mat-card-header>
+         <mat-card-title><h1>Welcome to my homepage!!!</h1></mat-card-title>
+         <mat-card-subtitle>Home page</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+         <p>
+         Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+         when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+         </p>
+      
+      </mat-card-content>
+      <mat-card-actions>
+           <button mat-button (click)="selectPage('home')">Home</button>
+    <button mat-button (click)="selectPage('todo-list')">Todos</button>
+    <button mat-button (click)="selectPage('event')">Events</button>
+    <button mat-button (click)="selectPage('calendar')">Calendar</button>
+    <button mat-button (click)="selectPage('note')">Notes</button>
+    <button mat-button (click)="selectPage('habit-tracker')">Habit tracker</button>
+      </mat-card-actions>
+      </mat-card>
+   </mat-card>
 </div>

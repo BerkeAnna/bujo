@@ -1,8 +1,8 @@
-<select #pageValue (change)="menuSwitch(pageValue.value)">
-    <option value="home">Home</option>
-    <option value="event">Event</option>
-    <option value="calendar">Calendar</option>
-    <option value="todo-list">Todo list</option>
-    <option value="habit-tracker">Habit tracker</option>
-    <option value="note">Note</option>
-</select>
+<nav class="nav-bar">
+    <button mat-button (click)="selectPage('home')">Home</button>
+    <button mat-button (click)="selectPage('todo-list')">Todos</button>
+    <button mat-button (click)="selectPage('event')">Events</button>
+    <button mat-button (click)="selectPage('calendar')">Calendar</button>
+    <button mat-button (click)="selectPage('note')">Notes</button>
+    <button mat-button (click)="selectPage('habit-tracker')">Habit tracker</button>
+</nav>

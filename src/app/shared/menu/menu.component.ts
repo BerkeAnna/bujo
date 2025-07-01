@@ -10,7 +10,7 @@ export class MenuComponent {
   @Output() selectedPage: EventEmitter<string> = new EventEmitter();
 
 
-  menuSwitch(pageValue: string) {
-    this.selectedPage.emit(pageValue);
+  selectPage(page: string) {
+    this.selectedPage.emit(page);
   }
 }
