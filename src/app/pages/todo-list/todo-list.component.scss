@@ -1,6 +1,7 @@
 $primary-color: rgb(25, 31, 101);
 $secondary-color: rgb(184, 190, 254);
 $button-color: rgb(7, 9, 40);
+$done-button-color: rgb(92, 103, 219);
 
 
 div{
@@ -32,13 +33,19 @@ div{
 
 .home-inside-card {
   background-color: $button-color;
-  width: 100%;
+  width: 25rem;
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
   text-align: center;
   border-radius: 5%;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  align-items: center;
+  text-align: left;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: flex-start;
 }
 
 button[mat-button]{
@@ -57,3 +64,15 @@ button[mat-button]:hover, button[mat-button]:active{
   background-color: $primary-color;
 
 }
+
+.done {
+  background-color: $done-button-color !important;
+  color: white !important;
+  border-color: $done-button-color !important;
+}
+
+.todo-text{
+  color: $secondary-color;
+  margin-bottom: 0px;
+}
+
