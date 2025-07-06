@@ -8,7 +8,7 @@ import {MatCardModule} from '@angular/material/card';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss', // fontos: styleUrl → styleUrls
     imports: [MatCardModule, MatButtonModule],
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.Default,
 })
 export class HomeComponent {
 

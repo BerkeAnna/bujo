@@ -13,6 +13,8 @@
         {{ todo.done ? '✔' : 'O' }}
         </button>
         <p [class.done-text]="todo.done" class="todo-text">{{ todo.text }}</p>
+        <span class="material-icons">edit</span>
+        <span class="material-icons">delete</span>
       </div>
       <div class="home-inside-card">
         <button 
