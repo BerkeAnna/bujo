@@ -10,7 +10,7 @@
           [ngClass]="{ done: todo.done }"
           (click)="toggleDone(i)"
         >
-        {{ todo.done ? '✔' : todo.id }}
+        {{ todo.done ? '✔' : 'O' }}
         </button>
         <p [class.done-text]="todo.done" class="todo-text">{{ todo.text }}</p>
       </div>

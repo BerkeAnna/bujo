@@ -11,6 +11,9 @@ import { HabitTrackerComponent } from './pages/habit-tracker/habit-tracker.compo
 import { NoteComponent } from './pages/note/note.component';
 import { MenuComponent } from './shared/menu/menu.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     CalendarComponent,
     HomeComponent,
     TodoListComponent,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   providers: [
     provideAnimationsAsync()

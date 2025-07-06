@@ -8,7 +8,7 @@ import {MatCardModule} from '@angular/material/card';
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.scss'], // fontos: styleUrl → styleUrls
   imports: [MatCardModule, MatButtonModule],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class CalendarComponent { }
 
