@@ -20,6 +20,8 @@ export class TodoListComponent implements OnInit {
   newTodoText = '';
   editingIndex: number | null = null;
   editingText = '';
+  today = new Date();
+
 
 constructor(private todoService: TodoService, private ngZone: NgZone) {}
 

@@ -1,26 +1,8 @@
 <header class="menu-bar">
-  <app-menu (selectedPage)="changePage($event)"></app-menu>
+  <app-menu></app-menu>
 </header>
 
 <main class="main-content">
-  <ng-container [ngSwitch]="page">
-    <ng-container *ngSwitchCase="'home'">
-      <app-home></app-home>
-    </ng-container>
-    <ng-container *ngSwitchCase="'calendar'">
-      <app-calendar></app-calendar>
-    </ng-container>
-    <ng-container *ngSwitchCase="'event'">
-      <app-event></app-event>
-    </ng-container>
-    <ng-container *ngSwitchCase="'habit-tracker'">
-      <app-habit-tracker></app-habit-tracker>
-    </ng-container>
-    <ng-container *ngSwitchCase="'note'">
-      <app-note></app-note>
-    </ng-container>
-    <ng-container *ngSwitchCase="'todo-list'">
-      <app-todo-list></app-todo-list>
-    </ng-container>
-  </ng-container>
+  <router-outlet></router-outlet>
 </main>
+
