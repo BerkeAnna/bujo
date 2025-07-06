@@ -76,3 +76,14 @@ button[mat-button]:hover, button[mat-button]:active{
   margin-bottom: 0px;
 }
 
+input{
+  background-color: $button-color;
+  color: $secondary-color;
+  border: 1px solid $done-button-color;
+  box-shadow: none;
+  outline: none;
+  padding: 5px;
+  border-radius: 5px;
+  width: 100%;
+}
+

@@ -10,9 +10,17 @@
           [ngClass]="{ done: todo.done }"
           (click)="toggleDone(i)"
         >
-      {{ todo.done ? '✔' : todo.id }}
+        {{ todo.done ? '✔' : todo.id }}
         </button>
         <p [class.done-text]="todo.done" class="todo-text">{{ todo.text }}</p>
+      </div>
+      <div class="home-inside-card">
+        <button 
+          mat-button
+        >
+        NEW
+        </button>
+        <input/>
       </div>
     </mat-card-content>
     </mat-card>
