@@ -17,10 +17,11 @@
       <div class="home-inside-card">
         <button 
           mat-button
+          (click)="addTodo()"
         >
         NEW
         </button>
-        <input/>
+        <input [(ngModel)]="newTodoText" placeholder="New todo..." (keyup.enter)="addTodo()"/>
       </div>
     </mat-card-content>
     </mat-card>

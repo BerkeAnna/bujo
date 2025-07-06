@@ -2,6 +2,7 @@ $primary-color: rgb(25, 31, 101);
 $secondary-color: rgb(184, 190, 254);
 $button-color: rgb(7, 9, 40);
 $done-button-color: rgb(92, 103, 219);
+$placeholder-color: rgb(139, 149, 255);
 
 
 div{
@@ -85,5 +86,9 @@ input{
   padding: 5px;
   border-radius: 5px;
   width: 100%;
+}
+
+input::placeholder{
+  color: $placeholder-color;
 }
 
