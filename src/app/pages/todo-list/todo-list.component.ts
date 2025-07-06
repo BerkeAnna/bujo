@@ -18,6 +18,8 @@ import { NgZone } from '@angular/core';
 export class TodoListComponent implements OnInit {
   todos: Todo[] = [];
   newTodoText = '';
+  editingIndex: number | null = null;
+  editingText = '';
 
 constructor(private todoService: TodoService, private ngZone: NgZone) {}
 
@@ -47,5 +49,42 @@ ngOnInit(): void {
     });
   }
 }
+
+  deleteTodo(index: number): void {
+    const todo = this.todos[index];
+    if (todo.id) {
+      this.todoService.deleteTodo(todo.id).then(() => {
+        // frontendről is eltávolítjuk, hogy azonnal eltűnjön
+        this.ngZone.run(() => {
+          this.todos.splice(index, 1);
+        });
+      });
+    }
+  }
+
+  editTodo(index: number): void {
+    this.editingIndex = index;
+    this.editingText = this.todos[index].text;
+  }
+
+  saveTodo(index: number): void {
+    const todo = this.todos[index];
+    const newText = this.editingText.trim();
+    if (todo.id && newText && newText !== todo.text) {
+      this.todoService.updateTodo(todo.id, { text: newText }).then(() => {
+        this.ngZone.run(() => {
+          this.todos[index].text = newText;
+          this.editingIndex = null;
+        });
+      });
+    } else {
+      this.editingIndex = null;
+    }
+  }
+
+  cancelEdit(): void {
+    this.editingIndex = null;
+    this.editingText = '';
+  }
 
 }

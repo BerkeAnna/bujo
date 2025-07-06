@@ -3,6 +3,10 @@ $secondary-color: rgb(184, 190, 254);
 $button-color: rgb(7, 9, 40);
 $done-button-color: rgb(92, 103, 219);
 $placeholder-color: rgb(139, 149, 255);
+$button-act-color: rgb(100, 113, 255);
+$red: rgb(134, 0, 0);
+$yellow: rgb(214, 175, 0);
+$green: rgb(0, 90, 35);
 
 
 div{
@@ -37,17 +41,27 @@ div{
   width: 25rem;
   padding: 1rem;
   display: flex;
-  flex-direction: column;
-  text-align: center;
-  border-radius: 5%;
-  margin-bottom: 5px;
-  margin-top: 5px;
-  align-items: center;
-  text-align: left;
   flex-direction: row;
-  gap: 1rem;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: space-between; // EZ húzza szét balra-jobbra
+  border-radius: 5%;
+  margin: 5px 0;
 }
+
+.todo-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: row;
+}
+
+.todo-right {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-direction: row;
+}
+
 
 button[mat-button]{
   color: $secondary-color;
@@ -62,7 +76,7 @@ button[mat-button]{
 
 button[mat-button]:hover, button[mat-button]:active{
   color: white;
-  background-color: $primary-color;
+  background-color: $button-act-color;
 
 }
 
@@ -86,9 +100,41 @@ input{
   padding: 5px;
   border-radius: 5px;
   width: 100%;
+  margin-left: 10px;
 }
 
 input::placeholder{
   color: $placeholder-color;
 }
 
+.delete-icon{
+  color: $done-button-color;
+}
+
+.delete-icon:hover{
+  color: $red;
+}
+
+.cancel-icon{
+  color: $done-button-color;
+}
+
+.cancel-icon:hover{
+  color: $red;
+}
+
+.edit-icon{
+  color: $placeholder-color;
+}
+
+.edit-icon:hover{
+  color: $yellow;
+}
+
+.save-icon{
+  color: $placeholder-color;
+}
+
+.save-icon:hover{
+  color: $green;
+}

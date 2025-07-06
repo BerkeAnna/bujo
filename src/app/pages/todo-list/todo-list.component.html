@@ -5,17 +5,37 @@
     </mat-card-header>
     <mat-card-content>
       <div *ngFor="let todo of todos; let i = index" class="home-inside-card">
-        <button 
-          mat-button
-          [ngClass]="{ done: todo.done }"
-          (click)="toggleDone(i)"
-        >
-        {{ todo.done ? '✔' : 'O' }}
-        </button>
-        <p [class.done-text]="todo.done" class="todo-text">{{ todo.text }}</p>
-        <span class="material-icons">edit</span>
-        <span class="material-icons">delete</span>
+        <div class="todo-left">
+          <button 
+            mat-button
+            [ngClass]="{ done: todo.done }"
+            (click)="toggleDone(i)">
+            {{ todo.done ? '✔' : 'O' }}
+          </button>
+
+          <ng-container *ngIf="editingIndex === i; else staticText">
+            <input [(ngModel)]="editingText" />
+          </ng-container>
+
+          <ng-template #staticText>
+            <p [class.done-text]="todo.done" class="todo-text">{{ todo.text }}</p>
+          </ng-template>
+        </div>
+
+
+       <div class="todo-right">
+          <ng-container *ngIf="editingIndex === i; else editDeleteIcons">
+            <span class="material-icons save-icon" (click)="saveTodo(i)">check</span>
+            <span class="material-icons cancel-icon" (click)="cancelEdit()">close</span>
+          </ng-container>
+          <ng-template #editDeleteIcons>
+            <span class="material-icons edit-icon" (click)="editTodo(i)">edit</span>
+            <span class="material-icons delete-icon" (click)="deleteTodo(i)">delete</span>
+          </ng-template>
+        </div>
+
       </div>
+
       <div class="home-inside-card">
         <button 
           mat-button
